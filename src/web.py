@@ -43,6 +43,7 @@ class EventSourceHandler(RequestHandler):
         self.set_status(200)
         self.set_header("Content-Type", "text/event-stream")
         self.set_header("Cache-Control", "no-cache")
+        self.flush()
 
         self.events.add('*', self._on_event)
         self.request.connection.set_close_callback(self._on_closing)
