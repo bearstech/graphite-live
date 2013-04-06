@@ -1,4 +1,5 @@
-from tornado.web import RequestHandler, asynchronous, Application
+from tornado.web import (
+    RequestHandler, asynchronous, Application, StaticFileHandler)
 from tornado.httpserver import HTTPServer
 from tornado.httpclient import HTTPClient
 from tornado.ioloop import IOLoop, PeriodicCallback
@@ -51,7 +52,8 @@ if __name__ == "__main__":
     import sys
     events = Emitter()
     application = Application([
-        (r"/", EventSourceHandler, dict(events=events, clients=[])),
+        (r"/event", EventSourceHandler, dict(events=events, clients=[])),
+        (r"/(.*)", StaticFileHandler, dict(path="static")),
     ], debug=True)
     server = HTTPServer(application, no_keep_alive=True, xheaders=True)
     server.listen(8888)

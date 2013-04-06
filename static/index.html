@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <script>
+var source = new EventSource('/event');
+source.onmessage = function (event) {
+  console.log(event.data);
+};
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
