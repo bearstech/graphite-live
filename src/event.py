@@ -1,5 +1,9 @@
 
 class Emitter(object):
+    """
+    Event emitter just like in javascript.
+    You have to remove every added callback or your application will leak.
+    """
 
     def __init__(self):
         self.chans = {}
