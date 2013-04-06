@@ -20,7 +20,9 @@ Launch it
 
 In some other terminals
 
-    curl http://localhost:8888/
+    curl -D - http://localhost:8888/event
+
+You can try the js client : http://localhost:8888/index.html
 
 
 Licence
