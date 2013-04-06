@@ -2,8 +2,6 @@ from tornado.web import RequestHandler, asynchronous, Application
 from tornado.httpserver import HTTPServer
 from tornado.httpclient import HTTPClient
 from tornado.ioloop import IOLoop, PeriodicCallback
-# Inspiration from
-# https://github.com/guyzmo/event-source-library/blob/master/eventsource/listener.py
 
 from event import Emitter
 
